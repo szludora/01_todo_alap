@@ -1,15 +1,23 @@
 class MegjSor {
   #adat = {};
-  constructor(adat, szulo) {
+  constructor(adat, szulo, index) {
     this.#adat = adat;
+    this.index = index;
     this.szulo = szulo;
     this.sor();
 
     // megfogom a pipákkal együtt az egész sort
     this.sorElem = this.szulo.children("tr:last-child");
     this.pipaElem = this.sorElem.children("td").children(".kesz");
-    // eseménykezelő
-    this.pipaElem.on("click", () => {});
+    this.kukaElem = this.sorElem.children("td").children(".torol");
+    // eseménykezelő pipára
+    this.pipaElem.on("click", () => {
+      this.pipa();
+    });
+    // eseménykezelő kukára
+    this.kukaElem.on("click", () => {
+      this.sorElem.remove();
+    });
   }
 
   sor() {
@@ -23,6 +31,28 @@ class MegjSor {
     txt += `</tr>`;
     this.szulo.append(txt);
   }
+
+  pipa() {
+    if (
+      this.sorElem.hasClass("jeloltSorParos") ||
+      this.sorElem.hasClass("jeloltSorParatlan")
+    ) {
+      this.sorElem.removeClass("jeloltSorParos");
+      this.sorElem.removeClass("jeloltSorParatlan");
+      // nem működik
+      this.pipaElem.children().removeClass("x");
+    } else if (this.index % 2 == 1) {
+      this.sorElem.addClass("jeloltSorParos");
+      this.pipaElem.children().addClass("x");
+    } else if (this.index % 2 == 0) {
+      this.sorElem.addClass("jeloltSorParatlan");
+      this.pipaElem.children().addClass("x");
+    }
+  }
+
+  // kuka(){
+  //   this.sorElem.remove()
+  // }
 }
 
 export default MegjSor;

@@ -16,7 +16,7 @@ class Megjelenit {
     for (let x = 0; x < this.#lista.length; x++) {
       txt += `<tr>`;
       const elem = this.#lista[x];
-      new MegjSor(elem, this.tszulo);
+      new MegjSor(elem, this.tszulo, x);
     }
     txt += "</table>";
   }

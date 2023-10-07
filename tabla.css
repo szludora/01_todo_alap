@@ -1,0 +1,50 @@
+table {
+	border: 1px solid rgb(201, 195, 195);
+	padding: 5px;
+	color: white;
+  }
+  
+  td {
+	height: 80px;
+	text-align: left;
+	padding-left: 50px;
+	font-size: 20px;
+  }
+  
+  
+  tr:nth-child(odd) {
+	background-color: rgb(67, 67, 67);
+  }
+  
+  tr:nth-child(even) {
+	background-color: rgb(51, 51, 51);
+  }
+  
+  table {
+	margin: auto;
+	width: 70%;
+	border-collapse: collapse;
+  }
+  
+  .fa-regular {
+	color: rgb(225, 198, 101);
+	font-size: 35px;
+  }
+  
+  .x {
+	color: rgb(0, 0, 0);
+  }
+  
+  .jeloltSorParos {
+	background-color: rgb(7, 83, 12) !important;
+  }
+  
+  .jeloltSorParatlan {
+	background-color: rgb(7, 112, 14) !important;
+  }
+  
+  span {
+	margin-left: 15px;
+	margin-right: 10px;
+  }
+  
