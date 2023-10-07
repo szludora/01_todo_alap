@@ -1,9 +1,24 @@
-class Elem{
-	constructor(){
-		
-	}
+class Elem {
+  constructor(szulo, index) {
+    this.index = index;
+    this.szulo = szulo;
+    this.negyzet();
+    this.elem = $(".elem");
+    this.figyel();
+    this.kep = "./jelolo.png"; // Módosítás: kép útvonala
+  }
 
-	// Készíts egy Elem osztályt az Elem.js fájlban, mely létrehoz egyetlen div-et,
-	// abban egy p taget. A ccs-ben állíts keretet és szélességet, magasságot a divnek.
-	//  Ha rákattintunk a div-re, írjon a p tagbe gey X-et. 
+  negyzet() {
+    let txt = `<div class="elem" hanyadik="${this.index}"><p></p></div>`;
+    this.szulo.append(txt);
+  }
+
+  figyel() {
+    this.elem.eq(this.index).on("click", () => {
+      const pElem = this.elem.eq(this.index).children("p");
+      pElem.html(`<i class="fa-brands fa-x-twitter"></i>`); // Kép beszúrása
+    });
+  }
 }
+
+export default Elem;
