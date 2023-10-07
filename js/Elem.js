@@ -5,7 +5,7 @@ class Elem {
     this.negyzet();
     this.elem = $(".elem");
     this.figyel();
-    this.kep = "./jelolo.png"; // Módosítás: kép útvonala
+    this.kep = "./img/jelolo.png"; // Módosítás: kép útvonala
   }
 
   negyzet() {

@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.doboz {
+  border: 2px solid white;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  width: 603px;
+  text-align: center;
+}
+
+.doboz .elem {
+  border: 1px solid white;
+  border-collapse: collapse;
+  height: 200px;
+}
+
+.fa-brands {
+  color: white;
+  font-size: 100px;
+  margin-top: 45px;
+}
+
+.elem p {
+  margin: auto;
+  text-align: center;
+  height: 100%;
+}
