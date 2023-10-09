@@ -1,22 +1,37 @@
 class Elem {
-  constructor(szulo, index) {
+  constructor(szulo, index, allapot = 0) {
     this.index = index;
     this.szulo = szulo;
-    this.negyzet();
+    this.allapot = false; //Beállítja az állapotot, alapértelmezésen 0, azaz üres, ha van benne, akkor 1
+    this.szulo.append(this.negyzet()); //egy div elemet helyez el benne egy p taggel a szülő elembe
     this.elem = $(".elem");
-    this.figyel();
-    this.kep = "./img/jelolo.png"; // Módosítás: kép útvonala
+    this.kep = "./img/jelolo.png";
+    this.figyel();  //eseménykezelő, kattintásra beszúr egy képet
   }
 
   negyzet() {
     let txt = `<div class="elem" hanyadik="${this.index}"><p></p></div>`;
-    this.szulo.append(txt);
+    return txt;
+  }
+
+  setAllapot(ertek) {
+    this.allapot = ertek;
+  }
+
+  getAllapot() {
+    return this.allapot;
+  }
+
+  toString() {
+    return `Elem { index: ${this.index}, allapot: ${this.allapot} }`;
   }
 
   figyel() {
-    this.elem.eq(this.index).on("click", () => {
-      const pElem = this.elem.eq(this.index).children("p");
-      pElem.html(`<i class="fa-brands fa-x-twitter"></i>`); // Kép beszúrása
+    const self = this;
+    this.elem.eq(this.index).on("click", function () {
+      const pElem = $(this).children("p");
+      pElem.html(`<i class="fa-brands fa-x-twitter"></i>`);
+      self.setAllapot(true);
     });
   }
 }
