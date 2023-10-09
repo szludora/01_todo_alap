@@ -1,3 +1,6 @@
+Pages:
+https://szludora.github.io/01_todo_alap/
+
 # 01 TODO alapfeladat
 Készíts egy osztályt TodoView néven, amely megjeleníti az adatokat egy táblázatban!
 Az adatok külön fájlban, egy listában vannak. 
